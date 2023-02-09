@@ -75,6 +75,11 @@ Gere a key do projeto Laravel
 php artisan key:generate
 ```
 
+Para executar os scripts
+```sh
+npm run dev
+```
+
 
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
