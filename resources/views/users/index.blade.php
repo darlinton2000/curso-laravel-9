@@ -45,7 +45,16 @@
 
             @foreach ($users as $user)
                 <tr>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $user->name }}</td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        
+                        @if ($user->image)
+                            <img src="{{ url("storage/{$user->image}") }}" alt="{{ $user->image }}" class="object-cover w-20">
+                        @else
+                            <img src="{{ url("images/favicon.ico") }}" alt="{{ $user->image }}" class="object-cover w-20">
+                        @endif
+                        
+                        {{ $user->name }}
+                    </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $user->email }}</td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                         <a href="{{ route('users.edit', $user->id) }}"
